@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Graham Booton — Mechanical Engineering</title>
+  <meta name="description" content="Graham Booton — Mechanical Engineering student at Iowa State University. Manufacturing, metrology, FEA, and Formula SAE.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+
+<!-- ======================================================================
+     HEADER / NAV — this same markup is duplicated at the top of
+     resume.html and lebenslauf.html. If you change a nav link, change it
+     in all three files.
+     ====================================================================== -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="name" href="index.html">Graham Booton</a>
+    <nav class="site-nav">
+      <!-- a href="#about">About</a -->
+      <a href="#experience">Experience</a>
+      <!--a href="#education">Education</a-->
+      <a href="#fsae">FSAE</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#skills">Skills</a>
+      <a href="#fun">Fun</a>
+      <a href="#contact">Contact</a>
+      <a href="resume.html" target="_blank" rel="noopener">Résumé ↗</a>
+      <a href="lebenslauf.html" target="_blank" rel="noopener">Lebenslauf ↗</a>
+    </nav>
+    <img class="site-mark" src="favicon.png" width="30" height="30" alt="" aria-hidden="true">
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ==================================================================
+       SUMMARY / OBJECTIVE
+       ================================================================== -->
+  <section id="about">
+    <h1>Graham Booton</h1>
+    <p class="tagline">Mechanical Engineering student · Iowa State University · Wheaton, IL</p>
+
+    <p class="lede">
+      Mechanical engineering undergraduate with CNC machining, metrology,
+      FEA, and leadership experience, seeking a <strong>Summer 2027
+      internship</strong> to contribute to process improvements and design
+      innovation in an automotive, motorsports, or advanced manufacturing
+      environment.
+    </p>
+  </section>
+
+  <!-- ==================================================================
+       PROFESSIONAL EXPERIENCE (reverse chronological)
+       Each job is a <details class="entry">. Copy one block to add a job —
+       the summary is the always-visible header (click, or the + icon, to
+       expand); the bullets go in the div.details-body underneath.
+       ================================================================== -->
+  <section id="experience">
+    <h2>Professional Experience</h2>
+
+    <details class="entry">
+      <summary>
+        <span class="when">May&ndash;Aug 2026</span>
+        <span class="title">
+          <h3>Manufacturing Engineering Intern &mdash; BorgWarner</h3>
+          <p class="where">Kokomo, IN</p>
+        </span>
+      </summary>
+      <div class="details-body">
+        <ul>
+          <li>
+            Designed an LVDT-based inspection station for dual-sided thickness
+            measurement with a target repeatability of 5&nbsp;&micro;m,
+            replacing a manual nine-point micrometer inspection &mdash;
+            an estimated 70% cycle-time reduction, eliminating 5 labor
+            hours per week.
+          </li>
+          <li>
+            Supported production of prototype Viper power switches for
+            next-gen EV inverters by operating SMT pick-and-place machinery
+            and verifying quality through X-ray, ultrasound, and microscope
+            inspection.
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="entry">
+      <summary>
+        <span class="when">Jun&ndash;Jul 2024</span>
+        <span class="title">
+          <h3>Manufacturing Intern &mdash; SMW Autoblok</h3>
+          <p class="where">Wheeling, IL</p>
+        </span>
+      </summary>
+      <div class="details-body">
+        <ul>
+          <li>
+            Gained CMM expertise independently and trained staff to
+            perform in-process inspections on the shop floor, eliminating
+            dependence on an inspection lab with a 2&ndash;8 hour queue.
+          </li>
+          <li>Set up and operated Mazak and DMG Mori 5-axis machining centers.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="entry">
+      <summary>
+        <span class="when">Summers 2022 &amp; 2023</span>
+        <span class="title">
+          <h3>CNC Operator &mdash; Prince Industries</h3>
+          <p class="where">Carol Stream, IL</p>
+        </span>
+      </summary>
+      <div class="details-body">
+        <ul>
+          <li>Configured and operated mill/turn, Swiss, and vertical CNC machines.</li>
+          <li>Performed in-process and final part inspections to ensure compliance with ISO standards.</li>
+          <li>Worked in the metrology lab to evaluate rejected parts, and performed CNC rework to meet client specifications.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ==================================================================
+       EDUCATION
+       ================================================================== -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="when">2024&ndash;2028</div>
+      <div class="what">
+        <h3>Iowa State University</h3>
+        <p class="where">B.S. Mechanical Engineering · German Language and Cultures for Professionals (LCP) minor</p>
+        <ul>
+          <li>3.57 GPA</li>
+          <li>Dean&rsquo;s List, 2&times;</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       FSAE PROJECTS
+       ================================================================== -->
+  <section id="fsae">
+    <h2>FSAE Projects</h2>
+
+    <div class="entry">
+      <div class="when">Sep 2025&ndash;present</div>
+      <div class="what">
+        <h3>Suspension Subteam Member &mdash; Formula SAE at Iowa State</h3>
+        <p class="where">Ames, IA</p>
+        <ul>
+          <li>
+            Designed the team&rsquo;s first universal clevis connecting the
+            A-arms to the chassis, reducing unique part numbers from 7 to 1
+            and decreasing manufacturing time by 4 hours, validated by 16
+            vehicle-dynamics-derived load cases in Ansys Mechanical FEA.
+          </li>
+          <li>Created technical documentation for competition RFQ, including engineering drawings.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       CAMPUS LEADERSHIP & INVOLVEMENT (reverse chronological)
+       Same <details class="entry"> pattern as Professional Experience.
+       ================================================================== -->
+  <section id="leadership">
+    <h2>Campus Leadership &amp; Involvement</h2>
+
+    <details class="entry">
+      <summary>
+        <span class="when">Aug 2026&ndash;present</span>
+        <span class="title">
+          <h3>Marketing Director &mdash; Iowa State SAE Executive Cabinet</h3>
+          <p class="where">Ames, IA</p>
+        </span>
+      </summary>
+      <div class="details-body">
+        <ul>
+          <li>Elected by peers to coordinate outreach for the SAE Formula, Baja, Aero, and Clean Snowmobile teams.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="entry">
+      <summary>
+        <span class="when">Jan 2026&ndash;present</span>
+        <span class="title">
+          <h3>Vice President of Finance &mdash; Iowa State Triangle Fraternity</h3>
+          <p class="where">Ames, IA</p>
+        </span>
+      </summary>
+      <div class="details-body">
+        <ul>
+          <li>Collect $550,000 in accounts receivable for a 50-tenant commercial property and a 110-member fraternity.</li>
+          <li>Allocate grant funds in compliance with 501(c)(3) regulations.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="entry">
+      <summary>
+        <span class="when">Jul&ndash;Dec 2025</span>
+        <span class="title">
+          <h3>Philanthropy Chair &mdash; Iowa State Triangle Fraternity</h3>
+          <p class="where">Ames, IA</p>
+        </span>
+      </summary>
+      <div class="details-body">
+        <ul>
+          <li>Planned an event that raised over $4,700 for the Jeremy Onyango Memorial Scholarship.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="entry">
+      <summary>
+        <span class="when">Apr 2026&ndash;Present</span>
+        <span class="title">
+          <h3>Member &mdash; Order of Omega</h3>
+          <p class="where">Ames, IA</p>
+        </span>
+      </summary>
+      <div class="details-body">
+        <ul>
+          <li>Selected to be initiated into an Iowa State Greek Honor Society that values character, scholarship, service and leadership.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ==================================================================
+       SKILLS
+       Add a new skill by adding an <li> to the relevant list.
+       ================================================================== -->
+  <section id="skills">
+    <h2>Skills</h2>
+
+    <div class="skill-group">
+      <h3>Technical</h3>
+      <ul class="tags">
+        <li>5-axis CNC machining</li>
+        <li>CMM operation</li>
+        <li>Metrology</li>
+        <li>Surface-mount technology</li>
+        <li>Quality inspection</li>
+        <li>3D printing</li>
+        <li>Microsoft Office</li>
+      </ul>
+    </div>
+
+    <div class="skill-group">
+      <h3>CAD</h3>
+      <ul class="tags">
+        <li>SolidWorks</li>
+        <li>Autodesk Inventor</li>
+        <li>Ansys Discovery &amp; SpaceClaim</li>
+        <li>Fusion 360 CAD &amp; CAM</li>
+      </ul>
+    </div>
+
+    <div class="skill-group">
+      <h3>Simulation Software</h3>
+      <ul class="tags">
+        <li>Ansys Mechanical</li>
+        <li>SolidWorks Simulation</li>
+      </ul>
+    </div>
+
+    <div class="skill-group">
+      <h3>Languages</h3>
+      <ul class="tags">
+        <li>German — High B1</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       FUN
+       ================================================================== -->
+  <section id="fun">
+    <h2>Fun</h2>
+    <p>
+      Outside the shop and the lab, I&rsquo;m usually on a bike &mdash; I ride
+      year-round and log most of it on Strava.
+    </p>
+    <p class="small">
+      <!-- Replace the # below with your Strava profile URL -->
+      <a href="#" target="_blank" rel="noopener">Strava profile ↗</a>
+    </p>
+  </section>
+
+</main>
+
+<!-- ======================================================================
+     FOOTER / CONTACT
+     ====================================================================== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <h2 id="contact">Contact</h2>
+    <ul class="stack">
+      <li><span>Email</span><span><a href="mailto:gbooton@iastate.edu">gbooton@iastate.edu</a></span></li>
+      <li><span>Phone</span><span><a href="tel:+16307402953"></a>630-740-2953</a></span></li>
+      <li><span>LinkedIn</span><span><a href="https://linkedin.com/in/grahambooton">linkedin.com/in/grahambooton</a></span></li>
+      <li><span>Location</span><span>Wheaton, IL</span></li>
+    </ul>
+    <p class="btn-row" style="margin-top:1.2rem">
+      <a class="btn" href="resume.html" target="_blank" rel="noopener">View Résumé</a>
+      <a class="btn" href="lebenslauf.html" target="_blank" rel="noopener">View Lebenslauf</a>
+    </p>
+    <p class="small" style="margin-top:1.5rem">&copy; <span id="year">2026</span> Graham Booton</p>
+  </div>
+</footer>
+
+<script>
+  // The only JavaScript on the site: keep the footer year current.
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

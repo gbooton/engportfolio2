@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Résumé — Graham Booton</title>
+  <meta name="description" content="Résumé for Graham Booton, Mechanical Engineering student at Iowa State University.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="name" href="index.html">Graham Booton</a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="resume.html">Résumé</a>
+      <a href="lebenslauf.html">Lebenslauf</a>
+    </nav>
+    <img class="site-mark" src="favicon.png" width="30" height="30" alt="" aria-hidden="true">
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="doc-toolbar">
+    <p>Preview below, or open it in its own tab.</p>
+    <p class="btn-row">
+      <a class="btn" href="assets/Graham-Booton-Resume.pdf" target="_blank" rel="noopener">Open PDF ↗</a>
+      <a class="btn" href="assets/Graham-Booton-Resume.pdf" download>Download</a>
+    </p>
+  </div>
+
+  <!-- To update: replace assets/Graham-Booton-Resume.pdf with the new file
+       (keep this exact filename) — nothing else on this page needs to change. -->
+  <div class="pdf-frame">
+    <iframe src="assets/Graham-Booton-Resume.pdf" title="Graham Booton résumé PDF">
+      <p class="fallback">
+        Your browser can&rsquo;t preview PDFs inline.
+        <a href="assets/Graham-Booton-Resume.pdf">Download the résumé (PDF)</a> instead.
+      </p>
+    </iframe>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="small">&copy; <span id="year">2026</span> Graham Booton &middot; <a href="index.html">Back to home</a></p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

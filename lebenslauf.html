@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lebenslauf — Graham Booton</title>
+  <meta name="description" content="Lebenslauf von Graham Booton, Maschinenbaustudent an der Iowa State University.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="name" href="index.html">Graham Booton</a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="resume.html">Résumé</a>
+      <a href="lebenslauf.html">Lebenslauf</a>
+    </nav>
+    <img class="site-mark" src="favicon.png" width="30" height="30" alt="" aria-hidden="true">
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="doc-toolbar">
+    <p>Vorschau unten, oder in einem eigenen Tab öffnen.</p>
+    <p class="btn-row">
+      <a class="btn" href="assets/lebenslauf.pdf" target="_blank" rel="noopener">PDF öffnen ↗</a>
+      <a class="btn" href="assets/lebenslauf.pdf" download>Herunterladen</a>
+    </p>
+  </div>
+
+  <!-- To update: drop the finalized PDF at assets/Graham-Booton-Lebenslauf.pdf
+       (this exact filename) — nothing else on this page needs to change.
+       Until that file exists, the preview below will show as empty/broken. -->
+  <div class="pdf-frame">
+    <iframe src="assets/lebenslauf.pdf" title="Lebenslauf von Graham Booton (PDF)">
+      <p class="fallback">
+        Ihr Browser kann PDFs nicht direkt anzeigen.
+        <a href="assets/lebenslauf.pdf">Lebenslauf herunterladen (PDF)</a>
+      </p>
+    </iframe>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="small">&copy; <span id="year">2026</span> Graham Booton &middot; <a href="index.html">Zurück zur Startseite</a></p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

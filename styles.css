@@ -1,0 +1,294 @@
+/* ==========================================================================
+   Graham Booton — portfolio
+   Single stylesheet, shared by index.html, resume.html, and lebenslauf.html.
+   You should rarely need to touch this file to update content; edit the
+   HTML instead. Colors and spacing live in :root below.
+   ========================================================================== */
+
+:root {
+  --bg:        #fbfaf7;
+  --text:      #1b1b1a;
+  --muted:     #6d6a63;
+  --rule:      #e2ded4;
+  --accent:    #9c3d24;   /* rust — used only for links & small accents */
+  --accent-2:  #7a2f1c;
+  --maxw:      44rem;
+  --gap:       2.75rem;   /* vertical rhythm between sections */
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:     #16161a;
+    --text:   #e8e6e0;
+    --muted:  #9c988e;
+    --rule:   #2e2e34;
+    --accent: #e0a08c;
+    --accent-2:#f0c3b3;
+  }
+}
+
+/* ---------- base ---------------------------------------------------------- */
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+a:hover { color: var(--accent-2); }
+
+h1, h2, h3 { line-height: 1.25; font-weight: 650; }
+h1 { font-size: 1.9rem; margin: 0 0 .35rem; letter-spacing: -0.01em; }
+h2 {
+  font-size: 1.15rem;
+  margin: 0 0 1.1rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid var(--rule);
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+h3 { font-size: 1.02rem; margin: 0 0 .15rem; }
+
+p { margin: 0 0 1rem; }
+ul { margin: 0 0 1rem; padding-left: 1.15rem; }
+li { margin: 0 0 .4rem; }
+
+.muted { color: var(--muted); }
+.small { font-size: .92rem; }
+
+/* ---------- header / nav ----------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+.site-header .wrap {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .4rem 3rem;
+  padding-top: .8rem;
+  padding-bottom: .8rem;
+  padding-right: 2.6rem; /* keep text clear of the corner mark */
+}
+.site-header .name {
+  font-weight: 650;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .1rem 1rem;
+  font-size: .92rem;
+}
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.site-nav a:hover { color: var(--accent); }
+
+/* favicon mark, pinned to the top-right corner of the header. Fixed dark
+   backing (not a theme variable) so the white logo stays visible whether
+   the page is in light or dark mode. */
+.site-mark {
+  position: absolute;
+  top: .6rem;
+  right: 0;
+  width: 28px;
+  height: 28px;
+  padding: 4px;
+  box-sizing: border-box;
+  background: #1c1b1a;
+  border-radius: 6px;
+}
+
+/* ---------- layout ------------------------------------------------------ */
+main { padding: var(--gap) 0 1rem; }
+section { margin-bottom: var(--gap); scroll-margin-top: 4.5rem; }
+
+.lede { font-size: 1.15rem; }
+
+.tagline { color: var(--muted); margin: 0 0 1.4rem; font-size: 1.05rem; }
+
+/* shared separator between entries, whether <div> or <details> */
+.entry { border-top: 1px solid var(--rule); }
+.entry:first-of-type { border-top: 0; }
+
+/* two-column rows: date on the left, content on the right (Education, FSAE) */
+div.entry {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: .25rem 1.5rem;
+  padding: 1rem 0;
+}
+div.entry:first-of-type { padding-top: .25rem; }
+div.entry .when {
+  color: var(--muted);
+  font-size: .9rem;
+  padding-top: .15rem;
+}
+div.entry .what > :last-child { margin-bottom: 0; }
+div.entry .where { color: var(--muted); font-size: .95rem; margin: 0 0 .5rem; }
+div.entry ul { margin-bottom: 0; }
+
+/* collapsible rows, opened via the + icon (Professional Experience, Leadership) */
+details.entry { padding: .2rem 0; }
+details.entry:first-of-type { padding-top: 0; }
+details.entry summary {
+  display: grid;
+  grid-template-columns: 1.4rem 8.5rem 1fr;
+  grid-template-areas: "icon when title";
+  align-items: start;
+  gap: .2rem 1.5rem;
+  padding: .8rem 0;
+  cursor: pointer;
+  list-style: none;
+}
+details.entry summary::-webkit-details-marker { display: none; }
+details.entry summary::marker { content: ""; }
+details.entry summary::before {
+  grid-area: icon;
+  content: "+";
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+details.entry[open] summary::before { content: "\2212"; }
+details.entry summary .when { grid-area: when; color: var(--muted); font-size: .9rem; padding-top: .2rem; }
+details.entry summary .title { grid-area: title; }
+details.entry summary .title h3 { margin: 0 0 .15rem; }
+details.entry summary .where { color: var(--muted); font-size: .95rem; margin: 0; }
+details.entry summary:hover .title h3 { color: var(--accent); }
+details.entry .details-body { padding: 0 0 1rem calc(1.4rem + 1.5rem); }
+details.entry .details-body ul { margin-bottom: 0; }
+
+/* compact definition-style list (contact, etc.) */
+.stack { list-style: none; padding: 0; margin: 0 0 1rem; }
+.stack li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .25rem 1rem;
+  padding: .5rem 0;
+  border-top: 1px solid var(--rule);
+}
+.stack li:first-child { border-top: 0; }
+.stack .when { color: var(--muted); font-size: .9rem; white-space: nowrap; }
+
+/* skills tag chips */
+.tags { list-style: none; padding: 0; margin: 0 0 1.2rem; display: flex; flex-wrap: wrap; gap: .5rem; }
+.tags li {
+  margin: 0;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: .35rem .8rem;
+  font-size: .85rem;
+  color: var(--text);
+}
+.skill-group { margin-bottom: 1rem; }
+.skill-group h3 { font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); font-weight: 600; margin-bottom: .6rem; }
+
+/* buttons */
+.btn-row { display: flex; flex-wrap: wrap; gap: .75rem; }
+.btn {
+  display: inline-block;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: none;
+  padding: .5rem .9rem;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: .95rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+.btn:hover { background: var(--accent); color: var(--bg); }
+
+/* ---------- footer ------------------------------------------------------ */
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding: 2rem 0 3rem;
+  color: var(--muted);
+  font-size: .95rem;
+}
+.site-footer h2 { color: var(--text); }
+.site-footer a { color: var(--accent); }
+
+/* ---------- résumé / Lebenslauf preview pages --------------------------- */
+.doc-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.doc-toolbar p { margin: 0; color: var(--muted); font-size: .9rem; }
+
+.pdf-frame {
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+  height: 82vh;
+  min-height: 32rem;
+  margin-bottom: var(--gap);
+}
+.pdf-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.pdf-frame .fallback { padding: 2rem; }
+
+/* ---------- responsive -------------------------------------------------- */
+@media (max-width: 34rem) {
+  div.entry { grid-template-columns: 1fr; gap: .1rem; }
+  div.entry .when { padding-top: 0; order: -1; }
+  details.entry summary {
+    grid-template-columns: 1.2rem 1fr;
+    grid-template-areas:
+      "icon title"
+      ".    when";
+  }
+  details.entry .details-body { padding-left: calc(1.2rem + 1rem); }
+  .stack li { grid-template-columns: 1fr; }
+  h1 { font-size: 1.65rem; }
+  .site-mark { width: 24px; height: 24px; }
+  .pdf-frame { height: 70vh; }
+}
+
+/* ---------- print ------------------------------------- */
+@media print {
+  .site-header, .site-footer, .doc-toolbar { display: none; }
+  a { color: inherit; text-decoration: none; }
+  body { font-size: 11pt; }
+}

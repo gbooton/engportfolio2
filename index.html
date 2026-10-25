@@ -11,22 +11,13 @@
 <body>
 
 <!-- ======================================================================
-     HEADER / NAV — this same markup is duplicated at the top of
-     resume.html and lebenslauf.html. If you change a nav link, change it
-     in all three files.
+     HEADER / NAV — a similar header sits at the top of resume.html and
+     lebenslauf.html. If you change a nav link, check all three files.
      ====================================================================== -->
 <header class="site-header">
   <div class="wrap">
     <a class="name" href="index.html">Graham Booton</a>
     <nav class="site-nav">
-      <!-- a href="#about">About</a -->
-      <a href="#experience">Experience</a>
-      <!--a href="#education">Education</a-->
-      <a href="#fsae">FSAE</a>
-      <a href="#leadership">Leadership</a>
-      <a href="#skills">Skills</a>
-      <a href="#fun">Fun</a>
-      <a href="#contact">Contact</a>
       <a href="resume.html" target="_blank" rel="noopener">Résumé ↗</a>
       <a href="lebenslauf.html" target="_blank" rel="noopener">Lebenslauf ↗</a>
     </nav>
@@ -40,15 +31,24 @@
        SUMMARY / OBJECTIVE
        ================================================================== -->
   <section id="about">
-    <h1>Graham Booton</h1>
-    <p class="tagline">Mechanical Engineering student · Iowa State University · Wheaton, IL</p>
+    <div class="about-grid">
+      <div class="about-text">
+        <h1>Graham Booton</h1>
+        <p class="tagline">Mechanical Engineering student · Iowa State University · Wheaton, IL</p>
+      </div>
+
+      <!-- PROFILE PHOTO: save your photo as assets/profile.jpg (portrait,
+           roughly 4:5, ~800px wide is plenty). Until that file exists, the
+           placeholder box below shows instead. For a .png, change the src. -->
+      <div class="profile-photo">
+        <img src="assets/profile.jpg" alt="Photo of Graham Booton" onerror="this.remove()">
+      </div>
+    </div>
 
     <p class="lede">
-      Mechanical engineering undergraduate with CNC machining, metrology,
-      FEA, and leadership experience, seeking a <strong>Summer 2027
-      internship</strong> to contribute to process improvements and design
-      innovation in an automotive, motorsports, or advanced manufacturing
-      environment.
+      My name is Graham Booton and I'm a Mechanical Engineering student at Iowa State University, graduating in May 2028. Previously, I've worked as a Manufacturing Engineering Intern at BorgWarner, and a CNC operator in two machine shops.
+
+      On campus I've been involved with Formula SAE EV on the suspension subteam. Currently I'm leading the charge on designing brand-new uprights for our next car. Since the start of development, I've been designing the geometry with topology optimization at the forefront.
     </p>
   </section>
 
@@ -63,13 +63,14 @@
 
     <details class="entry">
       <summary>
-        <span class="when">May&ndash;Aug 2026</span>
+        <span class="when">Summer 2026</span>
         <span class="title">
           <h3>Manufacturing Engineering Intern &mdash; BorgWarner</h3>
           <p class="where">Kokomo, IN</p>
         </span>
       </summary>
       <div class="details-body">
+        <p class="detail-label">Description</p>
         <ul>
           <li>
             Designed an LVDT-based inspection station for dual-sided thickness
@@ -85,18 +86,30 @@
             inspection.
           </li>
         </ul>
+
+        <p class="detail-label">Skills</p>
+        <!-- SKILLS: add or remove <li> chips for this role -->
+        <ul class="tags" aria-label="Skills used">
+          <li>LVDT measurement</li>
+          <li>Inspection station design</li>
+          <li>SMT pick-and-place</li>
+          <li>X-ray inspection</li>
+          <li>Ultrasound inspection</li>
+          <li>Microscopy</li>
+        </ul>
       </div>
     </details>
 
     <details class="entry">
       <summary>
-        <span class="when">Jun&ndash;Jul 2024</span>
+        <span class="when">Summer 2024</span>
         <span class="title">
           <h3>Manufacturing Intern &mdash; SMW Autoblok</h3>
           <p class="where">Wheeling, IL</p>
         </span>
       </summary>
       <div class="details-body">
+        <p class="detail-label">Description</p>
         <ul>
           <li>
             Gained CMM expertise independently and trained staff to
@@ -104,6 +117,22 @@
             dependence on an inspection lab with a 2&ndash;8 hour queue.
           </li>
           <li>Set up and operated Mazak and DMG Mori 5-axis machining centers.</li>
+        </ul>
+
+        <p class="detail-label">Skills</p>
+        <!-- SKILLS: add or remove <li> chips for this role -->
+        <ul class="tags" aria-label="Skills used">
+          <li>CMM operation</li>
+          <li>In-process inspection</li>
+          <li>5-axis machining</li>
+          <li>Staff training</li>
+        </ul>
+
+        <p class="detail-label">Equipment Operated</p>
+        <ul class="tags" aria-label="Equipment operated">
+          <li>Mitutoyo CRYSTA-PLUS M443 CMM</li>
+          <li>Mazak VARIAXIS i-500 5-axis machining center</li>
+          <li>Mazak MTV series vertical machining center</li>
         </ul>
       </div>
     </details>
@@ -117,10 +146,29 @@
         </span>
       </summary>
       <div class="details-body">
+        <p class="detail-label">Description</p>
         <ul>
           <li>Configured and operated mill/turn, Swiss, and vertical CNC machines.</li>
           <li>Performed in-process and final part inspections to ensure compliance with ISO standards.</li>
           <li>Worked in the metrology lab to evaluate rejected parts, and performed CNC rework to meet client specifications.</li>
+        </ul>
+
+        <p class="detail-label">Skills</p>
+        <!-- SKILLS: add or remove <li> chips for this role -->
+        <ul class="tags" aria-label="Skills used">
+          <li>Mill/turn CNC</li>
+          <li>Swiss CNC</li>
+          <li>Vertical mills</li>
+          <li>Metrology</li>
+          <li>ISO compliance</li>
+          <li>CNC rework</li>
+        </ul>
+
+        <p class="detail-label">Equipment Operated</p>
+        <ul class="tags" aria-label="Equipment operated">
+          <li>Eurotech Elite Trofeo double spindle mill/turn machine</li>
+          <li>Various Haas VF series vertical machining centers</li>
+          <li>Mazak Multiplex 6200 gantry lathe turning center</li>
         </ul>
       </div>
     </details>
@@ -138,23 +186,59 @@
         <p class="where">B.S. Mechanical Engineering · German Language and Cultures for Professionals (LCP) minor</p>
         <ul>
           <li>3.57 GPA</li>
-          <li>Dean&rsquo;s List, 2&times;</li>
+          <li>2x Dean's List</li>
         </ul>
       </div>
     </div>
   </section>
 
   <!-- ==================================================================
-       FSAE PROJECTS
+       FSAE PROJECTS (newest season first)
+       Same <details class="entry"> pattern as Professional Experience.
+       Copy a block to add a project; edit the season in .when and the
+       project name in the <h3>.
        ================================================================== -->
   <section id="fsae">
     <h2>FSAE Projects</h2>
 
-    <div class="entry">
-      <div class="when">Sep 2025&ndash;present</div>
-      <div class="what">
-        <h3>Suspension Subteam Member &mdash; Formula SAE at Iowa State</h3>
-        <p class="where">Ames, IA</p>
+    <details class="entry">
+      <summary>
+        <span class="when">2026&ndash;2027 Season</span>
+        <span class="title">
+          <h3>Wheel Uprights</h3>
+          <p class="where">Suspension Subteam · Formula SAE at Iowa State · Ames, IA</p>
+        </span>
+      </summary>
+      <div class="details-body">
+        <p class="detail-label">Description</p>
+        <ul>
+          <li>
+            Currently leading design iteration and consolidation of front and
+            rear wheel uprights, involving coordination across four subteams
+            to ensure manufacturability, component packaging, and structural
+            requirements, validating in Ansys Mechanical FEA.
+          </li>
+          <!-- Add more bullets here as the design progresses -->
+        </ul>
+
+        <p class="detail-label">Skills</p>
+        <!-- SKILLS: add or remove <li> chips for this project -->
+        <ul class="tags" aria-label="Skills used">
+          <li>Topology optimization</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="entry">
+      <summary>
+        <span class="when">2025&ndash;2026 Season</span>
+        <span class="title">
+          <h3>Universal Clevis</h3>
+          <p class="where">Suspension Subteam Member · Formula SAE at Iowa State · Ames, IA</p>
+        </span>
+      </summary>
+      <div class="details-body">
+        <p class="detail-label">Description</p>
         <ul>
           <li>
             Designed the team&rsquo;s first universal clevis connecting the
@@ -164,8 +248,19 @@
           </li>
           <li>Created technical documentation for competition RFQ, including engineering drawings.</li>
         </ul>
+
+        <p class="detail-label">Skills</p>
+        <!-- SKILLS: add or remove <li> chips for this project -->
+        <ul class="tags" aria-label="Skills used">
+          <li>Ansys Mechanical</li>
+          <li>FEA</li>
+          <li>Load case analysis</li>
+          <li>Part consolidation</li>
+          <li>Engineering drawings</li>
+          <li>Technical documentation</li>
+        </ul>
       </div>
-    </div>
+    </details>
   </section>
 
   <!-- ==================================================================
@@ -184,8 +279,16 @@
         </span>
       </summary>
       <div class="details-body">
+        <p class="detail-label">Description</p>
         <ul>
           <li>Elected by peers to coordinate outreach for the SAE Formula, Baja, Aero, and Clean Snowmobile teams.</li>
+        </ul>
+
+        <p class="detail-label">Skills</p>
+        <!-- SKILLS: add or remove <li> chips for this role -->
+        <ul class="tags" aria-label="Skills used">
+          <li>Outreach</li>
+          <li>Team coordination</li>
         </ul>
       </div>
     </details>
@@ -199,9 +302,18 @@
         </span>
       </summary>
       <div class="details-body">
+        <p class="detail-label">Description</p>
         <ul>
           <li>Collect $550,000 in accounts receivable for a 50-tenant commercial property and a 110-member fraternity.</li>
           <li>Allocate grant funds in compliance with 501(c)(3) regulations.</li>
+        </ul>
+
+        <p class="detail-label">Skills</p>
+        <!-- SKILLS: add or remove <li> chips for this role -->
+        <ul class="tags" aria-label="Skills used">
+          <li>Accounts receivable</li>
+          <li>Grant allocation</li>
+          <li>501(c)(3) compliance</li>
         </ul>
       </div>
     </details>
@@ -215,8 +327,16 @@
         </span>
       </summary>
       <div class="details-body">
+        <p class="detail-label">Description</p>
         <ul>
           <li>Planned an event that raised over $4,700 for the Jeremy Onyango Memorial Scholarship.</li>
+        </ul>
+
+        <p class="detail-label">Skills</p>
+        <!-- SKILLS: add or remove <li> chips for this role -->
+        <ul class="tags" aria-label="Skills used">
+          <li>Event planning</li>
+          <li>Fundraising</li>
         </ul>
       </div>
     </details>
@@ -233,6 +353,11 @@
         <ul>
           <li>Selected to be initiated into an Iowa State Greek Honor Society that values character, scholarship, service and leadership.</li>
         </ul>
+        <!-- SKILLS: add or remove <li> chips for this role -->
+        <ul class="tags" aria-label="Skills used">
+          <li>Service</li>
+          <li>Leadership</li>
+        </ul>
       </div>
     </details>
   </section>
@@ -240,20 +365,57 @@
   <!-- ==================================================================
        SKILLS
        Add a new skill by adding an <li> to the relevant list.
+       Group order: Manufacturing, Metrology & Inspection, CAD,
+       Simulation (FEA), Languages.
+       (Microsoft Office was in the old "Technical" group and has no home
+       in these five — re-add it wherever you like.)
        ================================================================== -->
   <section id="skills">
     <h2>Skills</h2>
 
     <div class="skill-group">
-      <h3>Technical</h3>
+      <h3>Manufacturing</h3>
       <ul class="tags">
-        <li>5-axis CNC machining</li>
+        <!-- Expandable skills (5-axis CNC, SMT): click to show sub-skills.
+             Add or remove <li> items in the inner <ul class="subskills">. -->
+        <li class="has-sub">
+          <details class="skill-expand">
+            <summary>5-axis CNC machining</summary>
+            <ul class="subskills">
+              <li>Mazak</li>
+              <li>DMG Mori</li>
+              <li>Haas</li>
+              <li>Fanuc</li>
+              <li>Eurotech</li>
+            </ul>
+          </details>
+        </li>
+        <li>FDM 3D printing</li>
+        <li class="has-sub">
+          <details class="skill-expand">
+            <summary>SMT</summary>
+            <ul class="subskills">
+              <li>Solder paste printing</li>
+              <li>Pick-and-place</li>
+              <li title="Automated optical inspection">AOI</li>
+              <li>Solder reflow</li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </div>
+
+    <div class="skill-group">
+      <h3>Metrology &amp; Inspection</h3>
+      <ul class="tags">
+        <li>GD&amp;T</li>
         <li>CMM operation</li>
+        <li>CMM programming (MCOSMOS)</li>
+        <li>Calipers</li>
+        <li>Micrometer</li>
+        <li>Go/no-go gauges</li>
         <li>Metrology</li>
-        <li>Surface-mount technology</li>
         <li>Quality inspection</li>
-        <li>3D printing</li>
-        <li>Microsoft Office</li>
       </ul>
     </div>
 
@@ -268,9 +430,9 @@
     </div>
 
     <div class="skill-group">
-      <h3>Simulation Software</h3>
+      <h3>Simulation (FEA)</h3>
       <ul class="tags">
-        <li>Ansys Mechanical</li>
+        <li>Ansys Mechanical &amp; Workbench</li>
         <li>SolidWorks Simulation</li>
       </ul>
     </div>
@@ -279,6 +441,7 @@
       <h3>Languages</h3>
       <ul class="tags">
         <li>German — High B1</li>
+        <li>English - C2 Native Speaker</li>
       </ul>
     </div>
   </section>
@@ -308,7 +471,6 @@
     <h2 id="contact">Contact</h2>
     <ul class="stack">
       <li><span>Email</span><span><a href="mailto:gbooton@iastate.edu">gbooton@iastate.edu</a></span></li>
-      <li><span>Phone</span><span><a href="tel:+16307402953"></a>630-740-2953</a></span></li>
       <li><span>LinkedIn</span><span><a href="https://linkedin.com/in/grahambooton">linkedin.com/in/grahambooton</a></span></li>
       <li><span>Location</span><span>Wheaton, IL</span></li>
     </ul>
@@ -316,13 +478,19 @@
       <a class="btn" href="resume.html" target="_blank" rel="noopener">View Résumé</a>
       <a class="btn" href="lebenslauf.html" target="_blank" rel="noopener">View Lebenslauf</a>
     </p>
-    <p class="small" style="margin-top:1.5rem">&copy; <span id="year">2026</span> Graham Booton</p>
+    <p class="small footer-meta">
+      <span>&copy; <span id="year">2026</span> Graham Booton</span>
+      <span id="today"></span>
+    </p>
   </div>
 </footer>
 
 <script>
-  // The only JavaScript on the site: keep the footer year current.
-  document.getElementById('year').textContent = new Date().getFullYear();
+  // Footer: current year, and today's date (e.g. "Sunday, October 25").
+  var now = new Date();
+  document.getElementById('year').textContent = now.getFullYear();
+  document.getElementById('today').textContent =
+    now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
 </script>
 
 </body>

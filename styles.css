@@ -138,6 +138,45 @@ section { margin-bottom: var(--gap); scroll-margin-top: 4.5rem; }
 
 .tagline { color: var(--muted); margin: 0 0 1.4rem; font-size: 1.05rem; }
 
+/* intro text with a profile photo slot on the right */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 10rem;
+  gap: 1.5rem 2rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.about-text > :last-child { margin-bottom: 0; }
+
+/* Shows a dashed placeholder until assets/profile.jpg exists (the <img>
+   removes itself if the file is missing). */
+.profile-photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border: 1px dashed var(--rule);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--rule) 35%, transparent);
+  overflow: hidden;
+}
+.profile-photo::before {
+  content: "Photo";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: .85rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.profile-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* shared separator between entries, whether <div> or <details> */
 .entry { border-top: 1px solid var(--rule); }
 .entry:first-of-type { border-top: 0; }
@@ -212,7 +251,88 @@ details.entry .details-body ul { margin-bottom: 0; }
   padding: .35rem .8rem;
   font-size: .85rem;
   color: var(--text);
+  cursor: default;
+  transition: transform .18s ease, border-color .18s ease, color .18s ease,
+              box-shadow .18s ease, background-color .18s ease;
 }
+/* hover animation for every skill chip (site-wide and inside entries) */
+.tags li:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  color: var(--accent);
+  background-color: color-mix(in srgb, var(--accent) 10%, transparent);
+  box-shadow: 0 3px 8px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+@media (prefers-reduced-motion: reduce) {
+  .tags li { transition: none; }
+  .tags li:hover { transform: none; }
+}
+
+/* expandable skill chip (e.g. SMT): the <summary> is the chip, the sub-skills
+   open beneath it. The outer <li> becomes a plain wrapper. */
+.tags li.has-sub {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  transform: none;
+}
+.tags li.has-sub:hover { background: none; box-shadow: none; transform: none; }
+.tags li.has-sub:has(details[open]) { flex-basis: 100%; }
+.skill-expand summary {
+  display: inline-block;
+  list-style: none;
+  cursor: pointer;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: .35rem .8rem;
+  font-size: .85rem;
+  color: var(--text);
+  transition: transform .18s ease, border-color .18s ease, color .18s ease,
+              box-shadow .18s ease, background-color .18s ease;
+}
+.skill-expand summary::-webkit-details-marker { display: none; }
+.skill-expand summary::marker { content: ""; }
+.skill-expand summary::after { content: "+"; margin-left: .45rem; color: var(--accent); font-weight: 700; }
+.skill-expand[open] summary::after { content: "\2212"; }
+.skill-expand summary:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  color: var(--accent);
+  background-color: color-mix(in srgb, var(--accent) 10%, transparent);
+  box-shadow: 0 3px 8px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+.skill-expand .subskills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin: .6rem 0 .2rem .9rem;
+  padding: 0 0 0 .8rem;
+  border-left: 2px solid var(--rule);
+}
+.skill-expand .subskills li { font-size: .8rem; padding: .2rem .65rem; }
+@media (prefers-reduced-motion: reduce) {
+  .skill-expand summary { transition: none; }
+  .skill-expand summary:hover { transform: none; }
+}
+
+/* small section labels inside an expanded entry (Description / Skills / Equipment Operated) */
+.detail-label {
+  margin: 1.1rem 0 .4rem;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.details-body > .detail-label:first-child { margin-top: 0; }
+.entry .detail-label + .tags { margin-top: .4rem; }
+
+/* smaller chips under each job / project / role */
+.entry .tags { margin: .9rem 0 0; gap: .4rem; }
+.entry .tags li { font-size: .8rem; padding: .2rem .65rem; }
 .skill-group { margin-bottom: 1rem; }
 .skill-group h3 { font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); font-weight: 600; margin-bottom: .6rem; }
 
@@ -240,6 +360,13 @@ details.entry .details-body ul { margin-bottom: 0; }
   font-size: .95rem;
 }
 .site-footer h2 { color: var(--text); }
+.footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .25rem 1rem;
+  margin: 1.5rem 0 0;
+}
 .site-footer a { color: var(--accent); }
 
 /* ---------- résumé / Lebenslauf preview pages --------------------------- */
@@ -271,6 +398,8 @@ details.entry .details-body ul { margin-bottom: 0; }
 
 /* ---------- responsive -------------------------------------------------- */
 @media (max-width: 34rem) {
+  .about-grid { grid-template-columns: 1fr; }
+  .profile-photo { order: -1; width: 8rem; }
   div.entry { grid-template-columns: 1fr; gap: .1rem; }
   div.entry .when { padding-top: 0; order: -1; }
   details.entry summary {

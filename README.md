@@ -27,20 +27,31 @@ Everything is plain text inside the HTML files:
   is a collapsible row: the `<summary>` (date + title, with the + icon) is
   always visible, and the bullets in `.details-body` show when it's clicked
   open.
-- **Add a skill** — add an `<li>` inside the relevant `<ul class="tags">` in
-  the Skills section.
+- **Add an FSAE project** — copy one `<details class="entry">` block in the
+  `FSAE PROJECTS` section (newest season first) and edit the season, name,
+  and bullets. It's the same collapsible pattern as jobs and leadership roles.
+- **Skills under a job, project, or role** — each entry has a
+  `<ul class="tags" aria-label="Skills used">` under its bullets. Add or
+  remove `<li>` chips there. (Every chip, here and in the Skills section,
+  gets the same hover animation from `.tags li` in `styles.css`.)
+- **Add a skill to the main Skills section** — add an `<li>` inside the
+  relevant `<ul class="tags">` in that section.
+- **Profile photo** — save a portrait photo (roughly 4:5, ~800px wide) as
+  `assets/profile.jpg`. Until it exists, a dashed "Photo" placeholder shows
+  on the home page.
 - **Strava link** — the Fun section has a placeholder `href="#"` on the
   Strava link. Swap in your profile URL.
 - **Résumé** — replace `assets/Graham-Booton-Resume.pdf` (keep the exact
   filename) and the preview/download on `resume.html` stay current
   automatically — no HTML edits needed.
-- **Lebenslauf** — add the finalized PDF at `assets/Graham-Booton-Lebenslauf.pdf`
-  (exact filename). Until that file exists, `lebenslauf.html`'s preview will
-  appear empty/broken — that's expected.
+- **Lebenslauf** — replace `assets/lebenslauf.pdf` (keep the exact filename)
+  and `lebenslauf.html` picks it up automatically.
+- **Contact info** — the Contact list is at the bottom of `index.html`. The
+  phone number is intentionally not listed anywhere on the site.
 
 The header (name, nav, and the small favicon mark in the corner) is
-duplicated at the top of all three pages. If you change a nav link, change
-it everywhere.
+similar at the top of all three pages. If you change a nav link, check them
+all.
 
 ## Publishing on GitHub Pages
 
